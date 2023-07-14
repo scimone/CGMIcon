@@ -71,7 +71,8 @@ def create_icon_image(blood_glucose, trend_arrow):
 
     draw.text((text_x, text_y), str(blood_glucose), font=font, fill=text_color, stroke_width=1, stroke_fill=text_color)
 
-    arrow_image_path = os.path.join("img", trend_arrow + ".png")
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    arrow_image_path = os.path.join(script_dir, "img", trend_arrow + ".png")
     arrow_image = Image.open(arrow_image_path)
 
     if arrow_image.mode != "RGBA":
